@@ -1,0 +1,532 @@
+{% extends 'template.html' %} {% block head %}
+<title>Update Cipher</title>
+{% endblock %} {% block body %}
+
+<style>
+    .row {
+        float: left;
+        margin: 10px 0;
+    }
+    
+    .dots {
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        float: left;
+        margin: 0 10px;
+        opacity: 1;
+        -webkit-animation: flickr 0.7s 10000ms linear infinite;
+        animation: flickr 0.7s 10000ms linear infinite;
+    }
+    
+    .dots:nth-of-type(1) {
+        background: #cef366;
+    }
+    
+    .dots:nth-of-type(1) {
+        -webkit-animation-delay: 0.02s;
+        animation-delay: 0.02s;
+    }
+    
+    .dots:nth-of-type(2) {
+        background: #87a7bc;
+    }
+    
+    .dots:nth-of-type(2) {
+        -webkit-animation-delay: 0.04s;
+        animation-delay: 0.04s;
+    }
+    
+    .dots:nth-of-type(3) {
+        background: #5b399d;
+    }
+    
+    .dots:nth-of-type(3) {
+        -webkit-animation-delay: 0.06s;
+        animation-delay: 0.06s;
+    }
+    
+    .dots:nth-of-type(4) {
+        background: #de39cb;
+    }
+    
+    .dots:nth-of-type(4) {
+        -webkit-animation-delay: 0.08s;
+        animation-delay: 0.08s;
+    }
+    
+    .dots:nth-of-type(5) {
+        background: #8c3ae6;
+    }
+    
+    .dots:nth-of-type(5) {
+        -webkit-animation-delay: 0.1s;
+        animation-delay: 0.1s;
+    }
+    
+    .dots:nth-of-type(6) {
+        background: #0dd381;
+    }
+    
+    .dots:nth-of-type(6) {
+        -webkit-animation-delay: 0.12s;
+        animation-delay: 0.12s;
+    }
+    
+    .dots:nth-of-type(7) {
+        background: #f1458e;
+    }
+    
+    .dots:nth-of-type(7) {
+        -webkit-animation-delay: 0.14s;
+        animation-delay: 0.14s;
+    }
+    
+    .dots:nth-of-type(8) {
+        background: #6e885b;
+    }
+    
+    .dots:nth-of-type(8) {
+        -webkit-animation-delay: 0.16s;
+        animation-delay: 0.16s;
+    }
+    
+    .dots:nth-of-type(9) {
+        background: #56d7e6;
+    }
+    
+    .dots:nth-of-type(9) {
+        -webkit-animation-delay: 0.18s;
+        animation-delay: 0.18s;
+    }
+    
+    .dots:nth-of-type(10) {
+        background: #3d81c1;
+    }
+    
+    .dots:nth-of-type(10) {
+        -webkit-animation-delay: 0.2s;
+        animation-delay: 0.2s;
+    }
+    
+    .dots:nth-of-type(11) {
+        background: #6e29df;
+    }
+    
+    .dots:nth-of-type(11) {
+        -webkit-animation-delay: 0.22s;
+        animation-delay: 0.22s;
+    }
+    
+    .dots:nth-of-type(12) {
+        background: #604856;
+    }
+    
+    .dots:nth-of-type(12) {
+        -webkit-animation-delay: 0.24s;
+        animation-delay: 0.24s;
+    }
+    
+    .dots:nth-of-type(13) {
+        background: #a2f8c0;
+    }
+    
+    .dots:nth-of-type(13) {
+        -webkit-animation-delay: 0.26s;
+        animation-delay: 0.26s;
+    }
+    
+    .dots:nth-of-type(14) {
+        background: #777b85;
+    }
+    
+    .dots:nth-of-type(14) {
+        -webkit-animation-delay: 0.28s;
+        animation-delay: 0.28s;
+    }
+    
+    .dots:nth-of-type(15) {
+        background: #dc244f;
+    }
+    
+    .dots:nth-of-type(15) {
+        -webkit-animation-delay: 0.3s;
+        animation-delay: 0.3s;
+    }
+    
+    .dots:nth-of-type(16) {
+        background: #ed14e7;
+    }
+    
+    .dots:nth-of-type(16) {
+        -webkit-animation-delay: 0.32s;
+        animation-delay: 0.32s;
+    }
+    
+    .dots:nth-of-type(17) {
+        background: #cb60a2;
+    }
+    
+    .dots:nth-of-type(17) {
+        -webkit-animation-delay: 0.34s;
+        animation-delay: 0.34s;
+    }
+    
+    .dots:nth-of-type(18) {
+        background: #3dcb19;
+    }
+    
+    .dots:nth-of-type(18) {
+        -webkit-animation-delay: 0.36s;
+        animation-delay: 0.36s;
+    }
+    
+    .dots:nth-of-type(19) {
+        background: #f5222a;
+    }
+    
+    .dots:nth-of-type(19) {
+        -webkit-animation-delay: 0.38s;
+        animation-delay: 0.38s;
+    }
+    
+    .dots:nth-of-type(20) {
+        background: #c7de9a;
+    }
+    
+    .dots:nth-of-type(20) {
+        -webkit-animation-delay: 0.4s;
+        animation-delay: 0.4s;
+    }
+    
+    .dots:nth-of-type(21) {
+        background: #3c9c94;
+    }
+    
+    .dots:nth-of-type(21) {
+        -webkit-animation-delay: 0.42s;
+        animation-delay: 0.42s;
+    }
+    
+    .dots:nth-of-type(22) {
+        background: #15122a;
+    }
+    
+    .dots:nth-of-type(22) {
+        -webkit-animation-delay: 0.44s;
+        animation-delay: 0.44s;
+    }
+    
+    .dots:nth-of-type(23) {
+        background: #8353a4;
+    }
+    
+    .dots:nth-of-type(23) {
+        -webkit-animation-delay: 0.46s;
+        animation-delay: 0.46s;
+    }
+    
+    .dots:nth-of-type(24) {
+        background: #ede746;
+    }
+    
+    .dots:nth-of-type(24) {
+        -webkit-animation-delay: 0.48s;
+        animation-delay: 0.48s;
+    }
+    
+    .dots:nth-of-type(25) {
+        background: #d80cc6;
+    }
+    
+    .dots:nth-of-type(25) {
+        -webkit-animation-delay: 0.5s;
+        animation-delay: 0.5s;
+    }
+    
+    .dots:nth-of-type(26) {
+        background: #0d0b33;
+    }
+    
+    .dots:nth-of-type(26) {
+        -webkit-animation-delay: 0.52s;
+        animation-delay: 0.52s;
+    }
+    
+    .dots:nth-of-type(27) {
+        background: #63943f;
+    }
+    
+    .dots:nth-of-type(27) {
+        -webkit-animation-delay: 0.54s;
+        animation-delay: 0.54s;
+    }
+    
+    .dots:nth-of-type(28) {
+        background: #7729c1;
+    }
+    
+    .dots:nth-of-type(28) {
+        -webkit-animation-delay: 0.56s;
+        animation-delay: 0.56s;
+    }
+    
+    .dots:nth-of-type(29) {
+        background: #8884c6;
+    }
+    
+    .dots:nth-of-type(29) {
+        -webkit-animation-delay: 0.58s;
+        animation-delay: 0.58s;
+    }
+    
+    .dots:nth-of-type(30) {
+        background: #df9291;
+    }
+    
+    .dots:nth-of-type(30) {
+        -webkit-animation-delay: 0.6s;
+        animation-delay: 0.6s;
+    }
+    
+    .dots:nth-of-type(31) {
+        background: #243cfe;
+    }
+    
+    .dots:nth-of-type(31) {
+        -webkit-animation-delay: 0.62s;
+        animation-delay: 0.62s;
+    }
+    
+    .dots:nth-of-type(32) {
+        background: #0835a4;
+    }
+    
+    .dots:nth-of-type(32) {
+        -webkit-animation-delay: 0.64s;
+        animation-delay: 0.64s;
+    }
+    
+    .dots:nth-of-type(33) {
+        background: #bdf8bc;
+    }
+    
+    .dots:nth-of-type(33) {
+        -webkit-animation-delay: 0.66s;
+        animation-delay: 0.66s;
+    }
+    
+    .dots:nth-of-type(34) {
+        background: #ca4f02;
+    }
+    
+    .dots:nth-of-type(34) {
+        -webkit-animation-delay: 0.68s;
+        animation-delay: 0.68s;
+    }
+    
+    .dots:nth-of-type(35) {
+        background: #618e5d;
+    }
+    
+    .dots:nth-of-type(35) {
+        -webkit-animation-delay: 0.7s;
+        animation-delay: 0.7s;
+    }
+    
+    .dots:nth-of-type(36) {
+        background: #278c25;
+    }
+    
+    .dots:nth-of-type(36) {
+        -webkit-animation-delay: 0.72s;
+        animation-delay: 0.72s;
+    }
+    
+    .dots:nth-of-type(37) {
+        background: #2c28cd;
+    }
+    
+    .dots:nth-of-type(37) {
+        -webkit-animation-delay: 0.74s;
+        animation-delay: 0.74s;
+    }
+    
+    .dots:nth-of-type(38) {
+        background: #b164bb;
+    }
+    
+    .dots:nth-of-type(38) {
+        -webkit-animation-delay: 0.76s;
+        animation-delay: 0.76s;
+    }
+    
+    .dots:nth-of-type(39) {
+        background: #1bee21;
+    }
+    
+    .dots:nth-of-type(39) {
+        -webkit-animation-delay: 0.78s;
+        animation-delay: 0.78s;
+    }
+    
+    .dots:nth-of-type(40) {
+        background: #463d33;
+    }
+    
+    .dots:nth-of-type(40) {
+        -webkit-animation-delay: 0.8s;
+        animation-delay: 0.8s;
+    }
+    
+    .dots:nth-of-type(41) {
+        background: #dee9e7;
+    }
+    
+    .dots:nth-of-type(41) {
+        -webkit-animation-delay: 0.82s;
+        animation-delay: 0.82s;
+    }
+    
+    .dots:nth-of-type(42) {
+        background: #4de475;
+    }
+    
+    .dots:nth-of-type(42) {
+        -webkit-animation-delay: 0.84s;
+        animation-delay: 0.84s;
+    }
+    
+    .dots:nth-of-type(43) {
+        background: #db5ad7;
+    }
+    
+    .dots:nth-of-type(43) {
+        -webkit-animation-delay: 0.86s;
+        animation-delay: 0.86s;
+    }
+    
+    .dots:nth-of-type(44) {
+        background: #28a0dc;
+    }
+    
+    .dots:nth-of-type(44) {
+        -webkit-animation-delay: 0.88s;
+        animation-delay: 0.88s;
+    }
+    
+    .dots:nth-of-type(45) {
+        background: #2d2575;
+    }
+    
+    .dots:nth-of-type(45) {
+        -webkit-animation-delay: 0.9s;
+        animation-delay: 0.9s;
+    }
+    
+    .dots:nth-of-type(46) {
+        background: #635c2f;
+    }
+    
+    .dots:nth-of-type(46) {
+        -webkit-animation-delay: 0.92s;
+        animation-delay: 0.92s;
+    }
+    
+    .dots:nth-of-type(47) {
+        background: #7b4569;
+    }
+    
+    .dots:nth-of-type(47) {
+        -webkit-animation-delay: 0.94s;
+        animation-delay: 0.94s;
+    }
+    
+    .dots:nth-of-type(48) {
+        background: #5694e5;
+    }
+    
+    .dots:nth-of-type(48) {
+        -webkit-animation-delay: 0.96s;
+        animation-delay: 0.96s;
+    }
+    
+    .dots:nth-of-type(49) {
+        background: #51fcb0;
+    }
+    
+    .dots:nth-of-type(49) {
+        -webkit-animation-delay: 0.98s;
+        animation-delay: 0.98s;
+    }
+    
+    .dots:nth-of-type(50) {
+        background: #65b17f;
+    }
+    
+    .dots:nth-of-type(50) {
+        -webkit-animation-delay: 1s;
+        animation-delay: 1s;
+    }
+    
+    @-webkit-keyframes flickr {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes flickr {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
+<div class="content container text-center">
+    <div class="container " style=" margin-top: 70px; box-shadow: 7px 7px 14px #2c2c2c, -7px -7px 14px #565656; border-radius: 15px; padding: 30px; background-color: #414141; ">
+        <h1 class="display-1 text-center " style="background: linear-gradient(to right, #ff8503 0%, #a1eb0e 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; ">Update</h1>
+        <h1 class="display-3 text-center " style="background: linear-gradient(to right, #ff8503 0%, #a1eb0e 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; ">Make changes to the task</h1>
+    </div>
+
+    <div class="container " style=" margin-top: 70px; box-shadow: 7px 7px 14px #2c2c2c, -7px -7px 14px #565656; border-radius: 15px; padding: 30px; background-color: #414141; ">
+        <div class='row' style="z-index: -1;">
+            <div class='dots'></div>
+            <div class='dots'></div>
+            <div class='dots'></div>
+            <div class='dots'></div>
+            <div class='dots'></div>
+            <div class='dots'></div>
+            <div class='dots'></div>
+            <div class='dots'></div>
+            <div class='dots'></div>
+            <div class='dots'></div>
+        </div>
+        <div class="container " style=" margin-top: 50px;  box-shadow: 7px 7px 14px #2c2c2c, -7px -7px 14px #565656; border-radius: 15px; padding: 30px; background-color: #414141; ">
+            <div class="container " style=" zoom: 1.5; box-shadow: 7px 7px 14px #2c2c2c, -7px -7px 14px #565656; border-radius: 15px; padding: 30px; background-color: #414141; ">
+                <form action="/update/{{task.id}}" method="POST">
+                    <input class="form-group mx-sm-3 mb-2" type="text" name="content" id="content" value="{{task.content}}">
+                    <input class="btn btn-primary mb-2" type="submit" value="update" id="submit" disabled>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const input = document.getElementById('content');
+        const btn = document.getElementById('submit');
+
+        if (input.clicked == false || btn.clicked == false) {
+            AutoRefresh(2000);
+        }
+    </script>
+    {% endblock %}

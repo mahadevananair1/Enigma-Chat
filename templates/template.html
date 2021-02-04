@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-x:hidden">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+    <!-- <script type="text/JavaScript"> function AutoRefresh( t ) { setTimeout("location.reload(true);", t); }
+    </script> -->
+    {% block head %}{% endblock %}
+</head>
+
+<body style="background-color:#414141; overflow-x:hidden" onload="JavaScript:autoRefresh();">
+    {% block body %}{% endblock %}
+    <script>
+
+        const content = document.querySelector('#content');//considering content as the input element
+        const submit = document.querySelector('#submit');//considering submit as the btn element
+
+        const autoRefresh = () => {
+
+            var initialTime = setTimeout(() => {
+                
+                location.reload(true);
+            }, 5000);
+            content.addEventListener('click', ()=>{
+                console.log('processing.....');
+                clearTimeout(initialTime);
+                console.log('executed successfully.....');
+            })
+        }
+        content.addEventListener('change',() =>{
+            console.log('reload processing.....');
+            autoRefresh();
+        })
+
+        // document.querySelector('#content').onkeyup = function() {
+        //     if (document.querySelector('#content').value === '') {
+        //         document.querySelector('#submit').disabled = true;
+        //     } else {
+        //         document.querySelector('#submit').disabled = false;
+        //     }
+        // }
+    </script>
+</body>
+
+</html>
